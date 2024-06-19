@@ -1,0 +1,23 @@
+﻿@model MedicineApp.Entities.Medicine
+
+<h2>Medicine Details</h2>
+
+<dl class="row">
+    <dt class="col-sm-3">Medicine Type</dt>
+    <dd class="col-sm-9">@Model.MedicineType</dd>
+
+    <dt class="col-sm-3">Medicine Name</dt>
+    <dd class="col-sm-9">@Model.MedicineName</dd>
+
+    <dt class="col-sm-3">Price</dt>
+    <dd class="col-sm-9">@Model.Price</dd>
+
+    <dt class="col-sm-3">Stock Quantity</dt>
+    <dd class="col-sm-9">@Model.StockQuantity</dd>
+</dl>
+
+<p>
+    <a asp-action="Medicines">Back to All Medicines</a> |
+    <a asp-action="Edit" asp-route-id="@Model.MedicineId">Edit Medicine</a> |
+    <a asp-action="Create">Add New Medicine</a>
+</p>

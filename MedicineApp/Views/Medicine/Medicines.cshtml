@@ -1,0 +1,34 @@
+﻿@model List<MedicineApp.Entities.Medicine>
+
+<h2>All Medicines</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Medicine Type</th>
+            <th>Medicine Name</th>
+            <th>Price</th>
+            <th>Stock Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var medicine in Model)
+        {
+            <tr>
+                <td>@medicine.MedicineId</td>
+                <td>@medicine.MedicineType</td>
+                <td>@medicine.MedicineName</td>
+                <td>@medicine.Price</td>
+                <td>@medicine.StockQuantity</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@medicine.MedicineId" class="btn btn-secondary">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Add New Medicine</a>
+

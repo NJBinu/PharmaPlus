@@ -1,0 +1,36 @@
+﻿@model MedicineApp.Entities.Medicine
+
+<h2>Add New Medicine</h2>
+
+@using (Html.BeginForm("Create", "Medicine", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MedicineType)
+        @Html.EditorFor(model => model.MedicineType)
+        @Html.ValidationMessageFor(model => model.MedicineType)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MedicineName)
+        @Html.EditorFor(model => model.MedicineName)
+        @Html.ValidationMessageFor(model => model.MedicineName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Price)
+        @Html.EditorFor(model => model.Price)
+        @Html.ValidationMessageFor(model => model.Price)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StockQuantity)
+        @Html.EditorFor(model => model.StockQuantity)
+        @Html.ValidationMessageFor(model => model.StockQuantity)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Medicine</button>
+}
+
+<a asp-action="Medicines" class="btn btn-secondary">Cancel</a>
